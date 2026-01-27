@@ -27,6 +27,7 @@
     "sass": "^1.97.3"
   },
   "devDependencies": {
+    "esbuild": "^0.27.2",
     "nodemon": "^3.1.11"
   }
 }

@@ -1,9 +1,10 @@
 // main.mjs
 // Copyright (c) 2026 Ishan Pranav
 
+import { build } from 'esbuild';
 import { readdirSync, readFileSync, writeFileSync } from 'fs';
-import { basename, dirname, join } from 'path';
 import Handlebars from 'handlebars';
+import { basename, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
 const fileName = fileURLToPath(import.meta.url);
@@ -66,3 +67,10 @@ for (const file of readdirSync(pagesDirectory)) {
   writeFileSync(outputFile, fullHtml);
   console.log(`Built: ${outputFile}`);
 }
+
+build({
+  entryPoints: [ join(rootDirectory, 'scripts', 'main.js') ],
+  bundle: true,
+  minify: true,
+  outfile: join(outputDirectory, 'scripts', 'bundle.js')
+});
