@@ -1,0 +1,6 @@
+{
+    "watch": ["src/templates", "src/main.js"],
+    "ext": "hbs,js",
+    "exec": "node src/main.js",
+    "delay": 100
+}

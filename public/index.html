@@ -1,16 +1,83 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css" />
+    <link rel="stylesheet"
+          type="text/css"
+          href="styles/bootstrap.css" />
     <title>This is my inline title</title>
 
 </head>
+
 <body>
-    <h1>Test</h1>
-    <button class="btn btn-primary btn-lg">Large button 2</button>
+    <nav class="py-2 bg-body-tertiary border-bottom">
+        <div class="container d-flex flex-wrap">
+            <ul class="nav me-auto">
+                <li class="nav-item">
+                    <a href="#"
+                       class="nav-link link-body-emphasis px-2 active"
+                       aria-current="page">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"
+                       class="nav-link link-body-emphasis px-2">
+                        Features
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"
+                       class="nav-link link-body-emphasis px-2">
+                        Pricing
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"
+                       class="nav-link link-body-emphasis px-2">
+                        FAQs
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"
+                       class="nav-link link-body-emphasis px-2">
+                        About
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav">
+                <li class="nav-item"><a href="#"
+                       class="nav-link link-body-emphasis px-2">
+                        Login
+                    </a>
+                </li>
+                <li class="nav-item"><a href="#"
+                       class="nav-link link-body-emphasis px-2">
+                        Sign up
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <header class="py-3 mb-4 border-bottom">
+        <div class="container d-flex flex-wrap justify-content-center">
+            <a href="/"
+               class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2"
+                     width="40"
+                     height="32"
+                     aria-hidden="true">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <span class="fs-4">Double header</span>
+            </a>
+        </div>
+    </header>
     <h2>Page descr</h2>
 
 </body>
+
 </html>
