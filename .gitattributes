@@ -1,0 +1,4 @@
+# .gitattributes
+# Copyright (c) 2026 Ishan Pranav
+
+public/ linguist-generated
