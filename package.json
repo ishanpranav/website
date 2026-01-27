@@ -1,0 +1,29 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:html": "node src/main.js",
+    "build:css": "sass --load-path=node_modules src/styles/ishan.scss public/styles/bootstrap.css",
+    "watch:css": "sass --load_path=node_modules --watch src/styles:public/styles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishanpranav/website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ishanpranav/website/issues"
+  },
+  "homepage": "https://github.com/ishanpranav/website#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "handlebars": "^4.7.8",
+    "sass": "^1.97.3"
+  }
+}
