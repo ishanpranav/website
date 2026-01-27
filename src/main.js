@@ -12,7 +12,7 @@ const templatesDirectory = join(rootDirectory, 'templates');
 const layoutsDirectory = join(templatesDirectory, 'layouts');
 const partialsDirectory = join(templatesDirectory, 'partials');
 const pagesDirectory = join(templatesDirectory, 'pages');
-const outputDirectory = join(rootDirectory, '..', 'public');
+const outputDirectory = join(rootDirectory, '..', 'docs');
 
 for (const file of readdirSync(partialsDirectory)) {
   const name = basename(file, '.hbs');

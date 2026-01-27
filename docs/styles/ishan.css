@@ -1,6 +1,10 @@
 /** ishan.css */
 /** Copyright (c) 2026 Ishan Pranav */
 
+.ishan-stripe {
+    height: 6px;
+}
+
 .ishan-logo {
     font-family: 'Cinzel', serif;
     text-transform: uppercase;
