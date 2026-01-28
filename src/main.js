@@ -31,7 +31,8 @@ const layoutSource = readFileSync(
 
 const layoutTemplate = Handlebars.compile(layoutSource);
 const data = {
-
+  description: "Irvine, California, United States. Independent Consultant. Research Assistant, NYU Stern School of Business. Incoming Investment Banking Analyst @ PNC Capital Markets. Education: New York University.",
+  image: join(rootDirectory, 'images', '')
 };
 
 for (const file of readdirSync(pagesDirectory)) {
