@@ -16,7 +16,7 @@ const pagesDirectory = join(templatesDirectory, 'pages');
 const outputDirectory = join(rootDirectory, '..', 'docs');
 
 for (const file of readdirSync(partialsDirectory)) {
-  const name = basename(file, '.hbs');
+  const name = basename(file, '.html');
   const content = readFileSync(
     join(partialsDirectory, file),
     'utf8'
@@ -40,10 +40,10 @@ const layoutSource = readFileSync(
 
 const layoutTemplate = Handlebars.compile(layoutSource);
 const titles = {
-  'index': "About me",
-  'privacy': "Privacy policy",
-  'terms': "Terms of service",
-  'resume': "Resume"
+  index: "About me",
+  privacy: "Privacy policy",
+  terms: "Terms of service",
+  resume: "Resume"
 };
 
 for (const file of readdirSync(pagesDirectory)) {
@@ -52,11 +52,13 @@ for (const file of readdirSync(pagesDirectory)) {
     description: "Irvine, California, United States. Independent Consultant. Research Assistant, NYU Stern School of Business. Incoming Investment Banking Analyst @ PNC Capital Markets. Education: New York University.",
     image: 'https://ishanpranav.github.io/website/images/profile-full.jpg',
     title: titles[pageName],
+    titles: titles,
     pageName: pageName,
     url: 'https://ishanpranav.github.io/website',
     siteName: 'ishanpranav.github.io',
     legalName: 'Ishan Pranav',
-    email: 'ishan.pranav@stern.nyu.edu'
+    email: 'ishan.pranav@stern.nyu.edu',
+    themeColor: '#32174d'
   };
   const pageSource = readFileSync(
     join(pagesDirectory, file),

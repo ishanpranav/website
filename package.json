@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:html": "node src/main.js",
-    "build:css": "sass --load-path=node_modules src/styles/ishan.scss docs/styles/bootstrap.css",
+    "build:css": "sass --load-path=node_modules --style=compressed src/styles/ishan.scss docs/styles/bootstrap.css",
     "watch:css": "sass --load_path=node_modules --watch src/styles:docs/styles"
   },
   "repository": {

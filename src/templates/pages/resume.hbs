@@ -1,3 +1,6 @@
+{{!-- resume.hbs --}}
+{{!-- Copyright (c) 2026 Ishan Pranav --}}
+
 <div class="row g-5">
     <div class="col-md-4">
         <nav class="align-items-stretch pe-4 border-end">
@@ -5,6 +8,8 @@
                 <a class="nav-link" href="#title">{{title}}</a>
                 <a class="nav-link ms-3 my-1" href="#education">Education</a>
                 <a class="nav-link ms-3 my-1" href="#experience">Experience</a>
+                <a class="nav-link ms-3 my-1"
+                   href="#licenses">Certifications</a>
             </nav>
         </nav>
     </div>
@@ -16,31 +21,45 @@
         <div id="education">
             <h3 class="mt-4">Education</h3>
             <div class="card mt-3 shadow-sm">
-                <img src="images/nyu.jpg" class="card-img-top"
-                     alt="New York University" />
-                <div class="card-body">
+                <div class="card-header">
                     <div class="row">
                         <div class="col-8">
                             <p class="fw-bold text-primary mb-0">
                                 New York University, Stern School of
                                 Business
                             </p>
+                        </div>
+                        <div class="col-4 text-end">
+                            <p class="text-primary mb-0">
+                                New York, New York
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
                             <p class="mb-0">
                                 Finance (BS) and computer science (BA)
                             </p>
                             <p>GPA: 3.963 / 4.000</p>
                         </div>
                         <div class="col-4 text-end">
-                            <p class="text-primary mb-0">New York, New York</p>
                             <p class="mb-0">Sept 2022 &ndash; Dec 2025</p>
                             <p><em>summa cum laude</em></p>
                         </div>
                         <div class="col-12">
+                            <p class="mb-0">
                             <ul>
-                                <li>Life member &mdash; Beta Gamma Sigma, Delta
-                                    of New
-                                    York Chapter</li>
                                 <li>Treasurer &mdash; Beta Alpha Psi, Mu Chapter
+                                </li>
+                                <li>
+                                    Life member &mdash; Beta Gamma Sigma, Delta
+                                    of New York Chapter
+                                </li>
+                                <li>
+                                    Program director &mdash; IRS Volunteer
+                                    Income Tax Assistance, NYU site
                                 </li>
                                 <li>
                                     Director of client engagements &mdash;
@@ -63,12 +82,18 @@
                                     Garg
                                 </li>
                                 <li>
-                                    Tutor &mdash; Basic Algorithms, Nir Bitansky
-                                    and
-                                    Rotem
-                                    Oshman
+                                    Tutor &mdash; Basic Algorithms, Professors
+                                    Nir Bitansky and Rotem Oshman
+                                </li>
+                                <li>
+                                    Research assistant &mdash; Professor Shan Ge
+                                </li>
+                                <li>
+                                    Research assistant &mdash; Professor
+                                    Zhengyuan Zhou
                                 </li>
                             </ul>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -77,25 +102,53 @@
         <div id="experience">
             <h3 class="mt-4">Experience</h3>
             <div class="card mt-3">
-                <img src="images/san-francisco.jpg" class="card-img-top" alt="San Francisco">
-                <div class="card-body">
+                <div class="card-header">
                     <div class="row">
                         <div class="col-8">
                             <p class="fw-bold text-primary mb-0">
                                 Williams&ndash;Sonoma, Inc.
                             </p>
-                            <p>
+                        </div>
+                        <div class="col-4 text-end">
+                            <p class="text-primary mb-0">
+                                San Francisco, California
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <p class="mb-0">
                                 Technology finance summer analyst
                             </p>
                         </div>
                         <div class="col-4 text-end">
-                            <p class="text-primary mb-0">San Francisco,
-                                California</p>
-                            <p>Jun 2025 &ndash; Aug 2025
+                            <p class="mb-0">Jun 2025 &ndash; Aug 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="licenses">
+            <h3 class="mt-4">Certifications</h3>
+            <div class="card mt-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <p class="fw-bold mb-0">
+                                Securities Industry Essentials (SIE)
                             </p>
+                            <p class="mb-0">
+                                Financial Industry Regulatory Authority
+                            </p>
+                        </div>
+                        <div class="col-4 text-end">
+                            <p class="mb-0">Jan 2026</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

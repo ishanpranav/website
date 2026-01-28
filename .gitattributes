@@ -1,4 +1,9 @@
 # .gitattributes
 # Copyright (c) 2026 Ishan Pranav
 
-public/ linguist-generated
+docs/ linguist-documentation=false
+docs/ linguist-generated=true
+docs/images/ linguist-generated=false
+docs/images/ linguist-documentation=true
+docs/styles/ishan.css linguist-language=css
+docs/styles/carousel.css linguist-vendored=true

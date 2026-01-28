@@ -1,0 +1,15 @@
+{
+  "name": "Ishan Pranav",
+  "short_name": "Ishan Pranav",
+  "icons": [
+    {
+      "src": "/images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "theme_color": "#32174d",
+  "background_color": "#32174d",
+  "display": "standalone"
+}

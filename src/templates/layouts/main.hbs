@@ -1,3 +1,6 @@
+{{!-- main.hbs --}}
+{{!-- Copyright (c) 2026 Ishan Pranav --}}
+
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -14,6 +17,7 @@
     <meta name="description" content="{{description}}" />
     <meta name="keywords"
           content="Ishan Pranav, consultant, software developer, portfolio, finance, tech, education, economics, computer science, NYU, Stern, AI, artificial intelligence, research assistant" />
+    <meta name="author" content="Ishan Pranav" />
     <meta property="og:title" content="Ishan Pranav" />
     <meta property="og:description" content="{{description}}" />
     <meta property="og:image" content="{{image}}" />
@@ -23,16 +27,21 @@
     <meta property="twitter:description" content="{{description}}" />
     <meta property="twitter:image" content="{{image}}" />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#32174d" />
+    <meta name="theme-color" content="{{themeColor}}" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style"
           content="black-translucent" />
+    <link rel="mask-icon" href="#" color="{{themeColor}}" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="styles/bootstrap.css" />
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" />
     <link rel="stylesheet" type="text/css" href="styles/ishan.css" />
     {{{head}}}
+    <script type="text/javascript" src="scripts/bundle.js"></script>
 </head>
+
+<!-- Copyright (c) 2026 Ishan Pranav -->
 
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -145,15 +154,21 @@
                             </a>
                         </li>
                         <li class="nav-item mb-2">
+                            <a href="{{linkto pageName " resume" }}"
+                               class="nav-link p-0 text-body-secondary">
+                                {{ titles.resume }}
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
                             <a href="{{linkto pageName " privacy" }}"
                                class="nav-link p-0 text-body-secondary">
-                                Privacy policy
+                                {{ titles.privacy }}
                             </a>
                         </li>
                         <li class="nav-item mb-2">
                             <a href="{{linkto pageName " terms" }}"
                                class="nav-link p-0 text-body-secondary">
-                                Terms of service
+                                {{ titles.terms }}
                             </a>
                         </li>
                     </ul>
@@ -236,8 +251,6 @@
     </div>
     <script data-goatcounter="https://ishanpranav.goatcounter.com/count" async
             src="//gc.zgo.at/count.js"></script>
-    <script type="text/javascript" src="scripts/bundle.js">
-    </script>
 </body>
 
 </html>
