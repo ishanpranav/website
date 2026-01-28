@@ -40,7 +40,7 @@ const layoutSource = readFileSync(
 
 const layoutTemplate = Handlebars.compile(layoutSource);
 const titles = {
-  'about': "About me",
+  'index': "About me",
   'privacy': "Privacy policy",
   'terms': "Terms of service"
 };
