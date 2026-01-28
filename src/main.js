@@ -25,6 +25,13 @@ for (const file of readdirSync(partialsDirectory)) {
 }
 
 Handlebars.registerHelper('eq', (a, b) => a == b);
+Handlebars.registerHelper('linkto', (source, destination) => {
+  if (source === destination) {
+    return "#";
+  } 
+  
+  return destination + '.html';
+});
 
 const layoutSource = readFileSync(
   join(layoutsDirectory, 'main.hbs'),
@@ -33,7 +40,8 @@ const layoutSource = readFileSync(
 
 const layoutTemplate = Handlebars.compile(layoutSource);
 const titles = {
-  'about': "About me"
+  'about': "About me",
+  'privacy': "Privacy policy"
 };
 
 for (const file of readdirSync(pagesDirectory)) {
@@ -42,7 +50,8 @@ for (const file of readdirSync(pagesDirectory)) {
     description: "Irvine, California, United States. Independent Consultant. Research Assistant, NYU Stern School of Business. Incoming Investment Banking Analyst @ PNC Capital Markets. Education: New York University.",
     image: join(rootDirectory, 'images', ''),
     title: titles[pageName],
-    pageName: pageName
+    pageName: pageName,
+    url: 'https://ishanpranav.github.io/website'
   };
   const pageSource = readFileSync(
     join(pagesDirectory, file),
