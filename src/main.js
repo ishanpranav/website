@@ -49,7 +49,7 @@ for (const file of readdirSync(pagesDirectory)) {
   const pageName = basename(file, '.hbs');
   const data = {
     description: "Irvine, California, United States. Independent Consultant. Research Assistant, NYU Stern School of Business. Incoming Investment Banking Analyst @ PNC Capital Markets. Education: New York University.",
-    image: 'https://raw.githubusercontent.com/ishanpranav/website/a354e286f0a731dcad830c733371f6e1be4ba93f/docs/images/profile-full.jpg',
+    image: 'https://ishanpranav.github.io/website/images/profile-full.jpg',
     title: titles[pageName],
     pageName: pageName,
     url: 'https://ishanpranav.github.io/website',
