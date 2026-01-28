@@ -24,9 +24,9 @@ for (const file of readdirSync(partialsDirectory)) {
   Handlebars.registerPartial(name, content);
 }
 
-Handlebars.registerHelper('eq', (a, b) => a == b);
+Handlebars.registerHelper('eq', (a, b) => a.trim() == b.trim());
 Handlebars.registerHelper('linkto', (source, destination) => {
-  if (source === destination) {
+  if (source.trim() === destination.trim()) {
     return "#";
   } 
   
@@ -42,7 +42,8 @@ const layoutTemplate = Handlebars.compile(layoutSource);
 const titles = {
   'index': "About me",
   'privacy': "Privacy policy",
-  'terms': "Terms of service"
+  'terms': "Terms of service",
+  'resume': "Resume"
 };
 
 for (const file of readdirSync(pagesDirectory)) {
