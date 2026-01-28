@@ -26,6 +26,20 @@ function eqHelper(a, b) {
   return false;
 }
 
+function getPartial(key, data) {
+  const partial = Handlebars.partials[`${data.pageName}-${key}`];
+
+  if (!partial) {
+    return "";
+  }
+
+  if (typeof partial === 'function') {
+    return partial(data);
+  } 
+  
+  return partial;
+}
+
 for (const file of readdirSync(partialsDirectory)) {
   const name = basename(file, '.html');
   const content = readFileSync(
@@ -61,7 +75,8 @@ const titles = {
   about: "About me",
   privacy: "Privacy policy",
   terms: "Terms of service",
-  resume: "Resume"
+  resume: "Resume",
+  software: "Software"
 };
 
 for (const file of readdirSync(pagesDirectory)) {
@@ -83,22 +98,12 @@ for (const file of readdirSync(pagesDirectory)) {
     'utf8'
   );
   const pageTemplate = Handlebars.compile(pageSource);
-  const headPartial = Handlebars.partials[`${pageName}-head`];
-  let headHtml = "";
-
-  if (headPartial) {
-    if (typeof headPartial === 'function') {
-      headHtml = headPartial(data);
-    } else {
-      headHtml = headPartial;
-    }
-  }
-
   const pageHtml = pageTemplate(data);
   const fullHtml = layoutTemplate({
     ...data,
     body: pageHtml,
-    head: headHtml
+    head: getPartial('head', data),
+    foot: getPartial('foot', data)
   });
 
   const outputFile = join(
