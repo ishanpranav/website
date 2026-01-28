@@ -41,7 +41,8 @@ const layoutSource = readFileSync(
 const layoutTemplate = Handlebars.compile(layoutSource);
 const titles = {
   'about': "About me",
-  'privacy': "Privacy policy"
+  'privacy': "Privacy policy",
+  'terms': "Terms of service"
 };
 
 for (const file of readdirSync(pagesDirectory)) {
@@ -51,7 +52,10 @@ for (const file of readdirSync(pagesDirectory)) {
     image: join(rootDirectory, 'images', ''),
     title: titles[pageName],
     pageName: pageName,
-    url: 'https://ishanpranav.github.io/website'
+    url: 'https://ishanpranav.github.io/website',
+    siteName: 'ishanpranav.github.io',
+    legalName: 'Ishan Pranav',
+    email: 'ishan.pranav@stern.nyu.edu'
   };
   const pageSource = readFileSync(
     join(pagesDirectory, file),
