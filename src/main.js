@@ -24,19 +24,26 @@ for (const file of readdirSync(partialsDirectory)) {
   Handlebars.registerPartial(name, content);
 }
 
+Handlebars.registerHelper('eq', (a, b) => a == b);
+
 const layoutSource = readFileSync(
   join(layoutsDirectory, 'main.hbs'),
   'utf8'
 );
 
 const layoutTemplate = Handlebars.compile(layoutSource);
-const data = {
-  description: "Irvine, California, United States. Independent Consultant. Research Assistant, NYU Stern School of Business. Incoming Investment Banking Analyst @ PNC Capital Markets. Education: New York University.",
-  image: join(rootDirectory, 'images', '')
+const titles = {
+  'about': "About me"
 };
 
 for (const file of readdirSync(pagesDirectory)) {
   const pageName = basename(file, '.hbs');
+  const data = {
+    description: "Irvine, California, United States. Independent Consultant. Research Assistant, NYU Stern School of Business. Incoming Investment Banking Analyst @ PNC Capital Markets. Education: New York University.",
+    image: join(rootDirectory, 'images', ''),
+    title: titles[pageName],
+    pageName: pageName
+  };
   const pageSource = readFileSync(
     join(pagesDirectory, file),
     'utf8'
