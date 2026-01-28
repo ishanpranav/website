@@ -15,6 +15,17 @@ const partialsDirectory = join(templatesDirectory, 'partials');
 const pagesDirectory = join(templatesDirectory, 'pages');
 const outputDirectory = join(rootDirectory, '..', 'docs');
 
+function eqHelper(a, b) {
+  a = a.trim();
+  b = b.trim();
+
+  if (a === b) {
+    return true;
+  }
+
+  return false;
+}
+
 for (const file of readdirSync(partialsDirectory)) {
   const name = basename(file, '.html');
   const content = readFileSync(
@@ -24,12 +35,18 @@ for (const file of readdirSync(partialsDirectory)) {
   Handlebars.registerPartial(name, content);
 }
 
-Handlebars.registerHelper('eq', (a, b) => a.trim() == b.trim());
+Handlebars.registerHelper('eq', eqHelper);
 Handlebars.registerHelper('linkto', (source, destination) => {
-  if (source.trim() === destination.trim()) {
-    return "#";
-  } 
-  
+  if (eqHelper(source, destination)) {
+    return '#';
+  }
+
+  destination = destination.trim();
+
+  if (destination === 'index') {
+    return 'about.html';
+  }
+
   return destination + '.html';
 });
 
@@ -41,6 +58,7 @@ const layoutSource = readFileSync(
 const layoutTemplate = Handlebars.compile(layoutSource);
 const titles = {
   index: "About me",
+  about: "About me",
   privacy: "Privacy policy",
   terms: "Terms of service",
   resume: "Resume"
@@ -93,7 +111,7 @@ for (const file of readdirSync(pagesDirectory)) {
 }
 
 build({
-  entryPoints: [ join(rootDirectory, 'scripts', 'main.js') ],
+  entryPoints: [join(rootDirectory, 'scripts', 'main.js')],
   bundle: true,
   minify: true,
   outfile: join(outputDirectory, 'scripts', 'bundle.js')
