@@ -1,0 +1,109 @@
+[
+    {
+        "title": "R.U.R.",
+        "author": "Karel &Ccaron;apek",
+        "rating": 2
+    },
+    {
+        "title": "Nineteen-Eighty Four",
+        "author": "George Orwell",
+        "rating": 3,
+        "index": "1984"
+    },
+    {
+        "title": "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "rating": 3
+    },
+    {
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "rating": 3,
+        "index": "Lord of the Rings"
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "rating": 1,
+        "index": "Great Gatsby"
+    },
+    {
+        "title": "The Royal Game",
+        "author": "Stefan Zweig",
+        "rating": 2,
+        "index": "Royal Game"
+    },
+    {
+        "title": "The Ones Who Walk Away from Omelas",
+        "author": "Ursula K. Le Guin",
+        "rating": 1,
+        "index": "Ones Who Walk Away from Omelas"
+    },
+    {
+        "title": "White Noise",
+        "author": "Don DeLillo",
+        "rating": 2
+    },
+    {
+        "title": "The Hitchhiker's Guide to the Galaxy",
+        "author": "Douglas Adams",
+        "rating": 3,
+        "index": "Hitchhiker's Guide to the Galaxy"
+    },
+    {
+        "title": "The Raven",
+        "author": "Edgar Allen Poe",
+        "rating": 1,
+        "index": "Raven"
+    },
+    {
+        "title": "The Monkey's Paw",
+        "author": "W.W. Jacobs",
+        "rating": 1,
+        "index": "Monkey's Paw"
+    },
+    {
+        "title": "Flowers for Algernon",
+        "author": "Daniel Keyes",
+        "rating": 3
+    },
+    {
+        "title": "The Importance of Being Earnest",
+        "author": "Oscar Wilde",
+        "rating": 3,
+        "index": "Importance of Being Earnest"
+    },
+    {
+        "title": "The Pedestrian",
+        "author": "Ray Bradbury",
+        "rating": 1,
+        "index": "Pedestrian"
+    },
+    {
+        "title": "A Sound of Thunder",
+        "author": "Ray Bradbury",
+        "rating": 1,
+        "index": "Sound of Thunder"
+    },
+    {
+        "title": "Macbeth",
+        "author": "William Shakespeare",
+        "rating": 1
+    },
+    {
+        "title": "Anxious People",
+        "author": "Fredrik Backman",
+        "rating": 2
+    },
+    {
+        "title": "Ender's Game",
+        "author": "Orson Scott Card",
+        "rating": 3
+    },
+    {
+        "title": "The Lion, the Witch, and the Wardrobe",
+        "author": "C.S. Lewis",
+        "index": "Lion, Witch, and the Wardrobe",
+        "rating": 1
+    }
+]

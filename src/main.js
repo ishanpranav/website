@@ -6,6 +6,7 @@ import { readdirSync, readFileSync, writeFileSync } from 'fs';
 import Handlebars from 'handlebars';
 import { basename, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import reading from './data/reading.json' with { type: 'json' }; 
 
 const fileName = fileURLToPath(import.meta.url);
 const rootDirectory = dirname(fileName);
@@ -50,16 +51,13 @@ for (const file of readdirSync(partialsDirectory)) {
 }
 
 Handlebars.registerHelper('eq', eqHelper);
+Handlebars.registerHelper('geq', (a, b) => a >= b);
 Handlebars.registerHelper('linkto', (source, destination) => {
   if (eqHelper(source, destination)) {
     return '#';
   }
 
   destination = destination.trim();
-
-  if (destination === 'index') {
-    return 'about.html';
-  }
 
   return destination + '.html';
 });
@@ -72,12 +70,29 @@ const layoutSource = readFileSync(
 const layoutTemplate = Handlebars.compile(layoutSource);
 const titles = {
   index: "About me",
-  about: "About me",
   privacy: "Privacy policy",
   terms: "Terms of service",
   resume: "Resume",
-  software: "Software"
+  reading: "Reading list"
 };
+
+reading.sort((left, right) => {
+  let result = right.rating - left.rating;
+
+  if (result) {
+    return result;
+  }
+
+  if (!left.index) {
+    left.index = left.title;
+  }
+  
+  if (!right.index) {
+    right.index = right.title;
+  }
+
+  return left.index.localeCompare(right.index);
+});
 
 for (const file of readdirSync(pagesDirectory)) {
   const pageName = basename(file, '.hbs');
@@ -91,7 +106,8 @@ for (const file of readdirSync(pagesDirectory)) {
     siteName: 'ishanpranav.github.io',
     legalName: 'Ishan Pranav',
     email: 'ishan.pranav@stern.nyu.edu',
-    themeColor: '#32174d'
+    themeColor: '#32174d',
+    reading: reading
   };
   const pageSource = readFileSync(
     join(pagesDirectory, file),

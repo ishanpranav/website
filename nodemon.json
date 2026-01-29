@@ -2,7 +2,8 @@
     "watch": [
         "src/templates",
         "src/main.js",
-        "src/scripts"
+        "src/scripts",
+        "src/data/reading.json"
     ],
     "ext": "hbs,js",
     "exec": "node src/main.js",

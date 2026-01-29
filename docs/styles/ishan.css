@@ -9,3 +9,11 @@
     font-family: 'Cinzel', serif;
     text-transform: uppercase;
 }
+
+.ishan-card {
+    transition: transform 0.2s;
+}
+
+.ishan-card:hover {
+    transform: translateY(-5px);
+}
