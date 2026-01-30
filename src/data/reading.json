@@ -105,5 +105,89 @@
         "author": "C.S. Lewis",
         "index": "Lion, Witch, and the Wardrobe",
         "rating": 1
+    },
+    {
+        "title": "Jabberwocky",
+        "author": "Lewis Caroll",
+        "rating": 2
+    },
+    {
+        "title": "In Catilinam",
+        "author": "Cicero",
+        "rating": 2
+    },
+    {
+        "title": "Alcatraz Versus the Evil Librarians",
+        "author": "Brandon Sanderson",
+        "rating": 1
+    },
+    {
+        "title": "Aeneid",
+        "author": "Virgil",
+        "rating": 1
+    },
+    {
+        "title": "King Lear",
+        "author": "William Shakespeare",
+        "rating": 1
+    },
+    {
+        "title": "One Up on Wall Street",
+        "author": "Peter Lynch",
+        "rating": 1
+    },
+    {
+        "title": "The Little Book of Common Sense Investing",
+        "author": "John C. Bogle",
+        "rating": 2,
+        "index": "Little Book of Common Sense Investing"
+    },
+    {
+        "title": "Lily B. on the Brink of Cool",
+        "author": "Elizabeth Cody Kimmel",
+        "rating": 1
+    },
+    {
+        "title": "The Phantom Tollbooth",
+        "author": "Norton Juster",
+        "rating": 1
+    },
+    {
+        "title": "The Westing Game",
+        "author": "Ellen Raskin",
+        "rating": 1
+    },
+    {
+        "title": "Charlie and the Chocolate Factory",
+        "author": "Roald Dahl",
+        "rating": 1
+    },
+    {
+        "title": "The Name of this Book is Secret",
+        "author": "Pseudonymous Bosch",
+        "rating": 3,
+        "index": "Name of this Book is Secret"
+    },
+    {
+        "title": "Sideways Stories from Wayside School",
+        "author": "Louis Sachar",
+        "rating": 2
+    },
+    {
+        "title": "Story of Your Life",
+        "author": "Ted Chiang",
+        "rating": 2
+    },
+    {
+        "title": "The Necklace",
+        "author": "Guy de Maupassant",
+        "rating": 1,
+        "index": "Necklace"
+    },
+    {
+        "title": "The Lottery",
+        "author": "Shirley Jackson",
+        "rating": 1,
+        "index": "Lottery"
     }
 ]
