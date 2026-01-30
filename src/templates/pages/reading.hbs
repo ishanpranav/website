@@ -33,7 +33,7 @@
     </p>
     <p>
         <strong class="text-primary">One star indicates
-            "enjoyable," two stars indicate "should
+            "excellent," two stars indicate "should
             read,"
             and three stars indicate "must read."</strong>
     </p>
@@ -48,18 +48,12 @@
                     {{{author}}}
                 </p>
             </div>
-            <div class="col-3 text-md-end">
+            <div class="col-3 text-end">
                 <p class="mb-0">
                     {{#if (geq rating 1)}}
                     <span class="text-primary">
                         <svg class="bi" width="16" height="16">
                             <use xlink:href="#bi-star-fill" />
-                        </svg>
-                    </span>
-                    {{else}}
-                    <span class="text-secondary">
-                        <svg class="bi" width="16" height="16">
-                            <use xlink:href="#bi-star" />
                         </svg>
                     </span>
                     {{/if}}
@@ -69,23 +63,11 @@
                             <use xlink:href="#bi-star-fill" />
                         </svg>
                     </span>
-                    {{else}}
-                    <span class="text-secondary">
-                        <svg class="bi" width="16" height="16">
-                            <use xlink:href="#bi-star" />
-                        </svg>
-                    </span>
                     {{/if}}
                     {{#if (geq rating 3)}}
                     <span class="text-primary">
                         <svg class="bi" width="16" height="16">
                             <use xlink:href="#bi-star-fill" />
-                        </svg>
-                    </span>
-                    {{else}}
-                    <span class="text-secondary">
-                        <svg class="bi" width="16" height="16">
-                            <use xlink:href="#bi-star" />
                         </svg>
                     </span>
                     {{/if}}
