@@ -59,7 +59,7 @@ Handlebars.registerHelper('linkto', (source, destination) => {
 
   destination = destination.trim();
 
-  return destination + '.html';
+  return destination;
 });
 
 const layoutSource = readFileSync(
