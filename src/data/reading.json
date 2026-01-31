@@ -150,7 +150,8 @@
     {
         "title": "The Phantom Tollbooth",
         "author": "Norton Juster",
-        "rating": 1
+        "rating": 1,
+        "index": "Phantom Tollbooth"
     },
     {
         "title": "The Westing Game",
@@ -189,5 +190,11 @@
         "author": "Shirley Jackson",
         "rating": 1,
         "index": "Lottery"
+    },
+    {
+        "title": "THe Richest Man in Babylon",
+        "author": "",
+        "rating": 2,
+        "index": "George S. Clason"
     }
 ]
