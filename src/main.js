@@ -57,6 +57,10 @@ Handlebars.registerHelper('linkto', (source, destination) => {
     return '#';
   }
 
+  if (eqHelper(destination, 'index')) {
+    return '/';
+  }
+
   destination = destination.trim();
 
   return destination;
@@ -70,10 +74,11 @@ const layoutSource = readFileSync(
 const layoutTemplate = Handlebars.compile(layoutSource);
 const titles = {
   index: "About me",
-  privacy: "Privacy policy",
-  terms: "Terms of service",
+  'privacy-policy': "Privacy policy",
+  'terms-of-service': "Terms of service",
   resume: "Resume",
-  reading: "Reading list"
+  'reading-list': "Reading list",
+  '401k-match-calculator': "401(k) match calculator"
 };
 
 reading.sort((left, right) => {
@@ -107,7 +112,10 @@ for (const file of readdirSync(pagesDirectory)) {
     legalName: 'Ishan Pranav',
     email: 'ishan.pranav@stern.nyu.edu',
     themeColor: '#32174d',
-    reading: reading
+    reading: reading,
+    gitHubUrl: 'https://github.com/ishanpranav',
+    linkedInUrl: 'https://www.linkedin.com/in/ishanpranav/',
+    instagramUrl: 'https://www.instagram.com/ishan.pranav/'
   };
   const pageSource = readFileSync(
     join(pagesDirectory, file),

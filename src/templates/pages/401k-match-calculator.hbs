@@ -1,0 +1,298 @@
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="arrow-right-circle" viewBox="0 0 16 16">
+        <path
+              d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z">
+        </path>
+    </symbol>
+</svg>
+<h2 class="text-primary fw-bold mb-3 fs-1">{{title}}</h2>
+<p class="fs-5 col-md-6">
+    See how to capture the full employer match while maximizing
+    contributions.
+</p>
+<hr class="col-3 col-md-2 mb-5" />
+<div class="row g-5">
+    <div class="col-md-6">
+        <h2 class="text-body-emphasis">Plan details</h2>
+        <form>
+            <div class="row mb-3">
+                <label for="annualLimitInput" class="col-sm-6 col-form-label">
+                    Annual contribution limit
+                </label>
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="text" class="form-control text-end"
+                               id="annualLimitInput" />
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="matchPercentageInput"
+                       class="col-sm-8 col-form-label">
+                    Employer match
+                </label>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <input type="number" class="form-control text-end"
+                               id="matchPercentageInput" value="4" min="0"
+                               step="1" />
+                        <span class="input-group-text">%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="maxPercentageInput" class="col-sm-8 col-form-label">
+                    Max contribution percentage
+                </label>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <input type="number" class="form-control text-end"
+                               id="maxPercentageInput" value="75" min="0"
+                               max="100" step="1" />
+                        <span class="input-group-text">%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <spam class="form-text">
+                    Rules, rates, and percentages vary across
+                    employers
+                    and from year to year.
+                    You can usually find them in your
+                    Summary Plan Description (SPD).
+                    </span>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h2 class="text-body-emphasis mb-2">Strategy</h2>
+        <p>
+            Enter payments below, then choose an optimization
+            strategy.
+        </p>
+        <p>
+        <div class="row g-3">
+            <div class="col-md-8">
+                <select class="form-select" id="strategySelect">
+                    <option value="frontload">Frontload</option>
+                    <option value="dca">Dollar-cost average
+                    </option>
+                    <option value="uniform">Uniform percentage
+                    </option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-primary px-4 mr-1"
+                        id="calculateButton">
+                    Calculate
+                </button>
+            </div>
+            <div class="col-12">
+                <span class="form-text" id="strategyText"></span>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-floating">
+                    <select class="form-select my-2" id="payrollSelect">
+                        <option value="52">Weekly</option>
+                        <option value="24">Semimonthly</option>
+                        <option value="26">Biweekly</option>
+                        <option value="12">Monthly</option>
+                        <option value="4">Quarterly</option>
+                        <option value="1">Annually</option>
+                    </select>
+                    <label for="payrollSelect">
+                        Frequency
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <table class="table table-responsive ishan-stack-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Eligible compensation</th>
+                            <th>Contribution percentage</th>
+                            <th>Employee contribution</th>
+                            <th>Matching contribution</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paycheckTableBody"></tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row" class="align-middle">
+                                Total
+                            </th>
+                            <td>
+                                <label class="ishan-stack-hide col-form-label">
+                                    Total eligible compensation
+                                </label>
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-text">$</span>
+                                    <input type="text"
+                                           class="form-control text-end"
+                                           id="payInput" disabled="disabled"
+                                           aria-label="Eligible compensation"
+                                           aria-disabled="true" />
+                                </div>
+                            </td>
+                            <td>
+                                <label class="ishan-stack-hide col-form-label">
+                                    Overall contribution percentage
+                                </label>
+                                <div class="input-group input-group-sm">
+                                    <input type="number"
+                                           class="form-control text-end"
+                                           id="percentageInput"
+                                           disabled="disabled"
+                                           aria-label="Contribution percentage"
+                                           aria-disabled="true" />
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <label class="ishan-stack-hide col-form-label">
+                                    Total employee contributions
+                                </label>
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-text">$</span>
+                                    <input type="text"
+                                           class="form-control text-end"
+                                           id="contributionInput"
+                                           disabled="disabled"
+                                           aria-label="Employee contribution"
+                                           aria-disabled="true" />
+                                </div>
+                            </td>
+                            <td>
+                                <label class="ishan-stack-hide col-form-label">
+                                    Total matching contributions
+                                </label>
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-text">$</span>
+                                    <input type="text"
+                                           class="form-control text-end"
+                                           id="matchInput" disabled="disabled"
+                                           aria-label="Matching contribution"
+                                           aria-disabled="true" />
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="col-3 col-md-2 mt-5 mb-5" />
+<div class="mb-4 row">
+    <div class="col-12">
+        <h5 class="mb-2">About this tool</h5>
+    </div>
+    <div class="col-md-6">
+        <p>
+            Choosing 401(k)
+            deduction amounts should be trivial, but somehow still
+            manages to take more than 30 minutes in
+            2026.
+        </p>
+        <p>
+            Thus far I hadn&rsquo;t been able to find a tool
+            that helped me with all of the following goals:
+        <ul class="list-unstyled ps-0">
+            <li>
+                <span class="mb-1 icon-link">
+                    <svg class="bi" width="16" height="16">
+                        <use href="#arrow-right-circle"></use>
+                    </svg>
+                    Capture the full employer match
+                    without relying on &ldquo;true-up&rdquo;
+                </span>
+            </li>
+            <li>
+                <span class="mb-1 icon-link mr">
+                    <svg class="bi" width="16" height="16">
+                        <use href="#arrow-right-circle"></use>
+                    </svg>
+                    Max-out contribution limits without guessing
+                </span>
+            </li>
+            <li>
+                <span class="mb-1 icon-link">
+                    <svg class="bi" width="16" height="16">
+                        <use href="#arrow-right-circle"></use>
+                    </svg>
+                    Invest as much as possible, as early in the
+                    year as possible
+                </span>
+            </li>
+            <li>
+                <span class="mb-1 icon-link">
+                    <svg class="bi" width="16" height="16">
+                        <use href="#arrow-right-circle"></use>
+                    </svg>
+                    Contribute only whole-number
+                    percentages of gross pay
+                </span>
+            </li>
+        </ul>
+        <p>
+    </div>
+    <div class="col-md-6">
+        <p>
+            That last constraint is common to most payroll systems
+            and
+            seems to frustrate even the most astute personal finance
+            maestros.
+        </p>
+        <p>
+            If you find it helpful or have any questions,
+            comments,
+            or issues, please let me know at <a
+               href="mailto:{{email}}"
+               class="icon-link">{{email}}</a>.
+        </p>
+    </div>
+    <div class="col-12 pt-5">
+        <p class="text-body-secondary">
+            <small>
+                This calculator (the &ldquo;Software&rdquo;) is for
+                educational and informational
+                purposes
+                only. It does not provide financial advice.
+                Results may vary depending on your individual
+                circumstances.
+                Please consult a licensed financial advisor before
+                making
+                any
+                investment decisions.
+            </small>
+        </p>
+        <p class="text-body-secondary">
+            <small>
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY
+                OF ANY
+                KIND,
+                EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+                WARRANTIES
+                OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+                AND
+                NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+                COPYRIGHT
+                HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                LIABILITY,
+                WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+                ARISING
+                FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
+                THE USE
+                OR
+                OTHER DEALINGS IN THE SOFTWARE.
+            </small>
+        </p>
+    </div>
+</div>
