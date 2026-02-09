@@ -57,10 +57,6 @@ Handlebars.registerHelper('linkto', (source, destination) => {
     return '#';
   }
 
-  if (eqHelper(destination, 'index')) {
-    return '/';
-  }
-
   destination = destination.trim();
 
   return destination;
