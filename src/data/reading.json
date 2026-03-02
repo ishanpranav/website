@@ -122,16 +122,6 @@
         "rating": 1
     },
     {
-        "title": "Aeneid",
-        "author": "Virgil",
-        "rating": 1
-    },
-    {
-        "title": "King Lear",
-        "author": "William Shakespeare",
-        "rating": 1
-    },
-    {
         "title": "One Up on Wall Street",
         "author": "Peter Lynch",
         "rating": 1
@@ -156,11 +146,6 @@
     {
         "title": "The Westing Game",
         "author": "Ellen Raskin",
-        "rating": 1
-    },
-    {
-        "title": "Charlie and the Chocolate Factory",
-        "author": "Roald Dahl",
         "rating": 1
     },
     {

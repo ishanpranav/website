@@ -102,18 +102,15 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{#if (eq pageName "
-                                   software")}}active{{/if}}"
-                                   aria-current="page" href="{{linkto pageName "
-                                   software" }}">
+                                <a class="nav-link" aria-current="page"
+                                   href="{{gitHubUrl}}" target="_blank">
                                     Software
                                 </a>
                             </li>
                         </ul>
                         <ul class="navbar-nav d-flex flex-row">
                             <li class="nav-item ms-1">
-                                <a class="nav-link"
-                                   href="https://github.com/ishanpranav"
+                                <a class="nav-link" href="{{gitHubUrl}}"
                                    target="_blank" aria-label="GitHub">
                                     <svg class="bi" width="16" height="16"
                                          fill="currentColor">
@@ -122,8 +119,7 @@
                                 </a>
                             </li>
                             <li class="nav-item ms-1">
-                                <a class="nav-link"
-                                   href="https://www.linkedin.com/in/ishanpranav/"
+                                <a class="nav-link" href="{{linkedInUrl}}"
                                    target="_blank" aria-label="LinkedIn">
                                     <svg class="bi" width="16" height="16"
                                          fill="currentColor">
@@ -132,8 +128,7 @@
                                 </a>
                             </li>
                             <li class="nav-item ms-1">
-                                <a class="nav-link"
-                                   href="https://www.instagram.com/ishan.pranav/"
+                                <a class="nav-link" href="{{instagramUrl}}"
                                    target="_blank" aria-label="Instagram">
                                     <svg class="bi" width="16" height="16"
                                          fill="currentColor">
@@ -169,21 +164,21 @@
                             </a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a href="{{linkto pageName " reading"}}"
+                            <a href="{{linkto pageName " reading-list"}}"
                                class="nav-link p-0 text-body-secondary">
-                                {{titles.reading}}
+                                {{titles.[reading-list]}}
                             </a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a href="{{linkto pageName " privacy" }}"
+                            <a href="{{linkto pageName " privacy-policy" }}"
                                class="nav-link p-0 text-body-secondary">
-                                {{ titles.privacy }}
+                                {{ titles.[privacy-policy] }}
                             </a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a href="{{linkto pageName " terms" }}"
+                            <a href="{{linkto pageName " terms-of-service" }}"
                                class="nav-link p-0 text-body-secondary">
-                                {{ titles.terms }}
+                                {{ titles.[terms-of-service] }}
                             </a>
                         </li>
                     </ul>
@@ -194,14 +189,15 @@
                         <li class="nav-item mb-2"><a href="#"
                                class="nav-link p-0 text-body-secondary">Writing</a>
                         </li>
-                        <li class="nav-item mb-2"><a href="#"
-                               class="nav-link p-0 text-body-secondary">Pricing</a>
+                        <li class="nav-item mb-2"><a href="{{gitHubUrl}}"
+                               target="_blank"
+                               class="nav-link p-0 text-body-secondary">Software</a>
                         </li>
-                        <li class="nav-item mb-2"><a href="#"
-                               class="nav-link p-0 text-body-secondary">FAQs</a>
-                        </li>
-                        <li class="nav-item mb-2"><a href="#"
-                               class="nav-link p-0 text-body-secondary">About</a>
+                        <li class="nav-item mb-2"><a href="{{linkto pageName "
+                               401k-match-calculator"}}"
+                               class="nav-link p-0 text-body-secondary">
+                                {{ titles.[401k-match-calculator] }}
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -231,17 +227,15 @@
                 <p>&copy; 2026 {{legalName}}. All rights reserved.</p>
                 <ul class="list-unstyled d-flex">
                     <li class="ms-3">
-                        <a class="link-body-emphasis"
-                           href="https://github.com/ishanpranav" target="_blank"
-                           aria-label="GitHub">
+                        <a class="link-body-emphasis" href="{{gitHubUrl}}"
+                           target="_blank" aria-label="GitHub">
                             <svg class="bi" width="24" height="24">
                                 <use xlink:href="#bi-github" />
                             </svg>
                         </a>
                     </li>
                     <li class="ms-3">
-                        <a class="link-body-emphasis"
-                           href="https://www.linkedin.com/in/ishanpranav/"
+                        <a class="link-body-emphasis" href="{{linkedInUrl}}"
                            target="_blank" aria-label="LinkedIn">
                             <svg class="bi" width="24" height="24">
                                 <use xlink:href="#bi-linkedin" />
@@ -249,8 +243,7 @@
                         </a>
                     </li>
                     <li class="ms-3">
-                        <a class="link-body-emphasis"
-                           href="https://www.instagram.com/ishan.pranav/"
+                        <a class="link-body-emphasis" href="{{instagramUrl}}"
                            target="_blank" aria-label="Instagram">
                             <svg class="bi" width="24" height="24">
                                 <use xlink:href="#bi-instagram" />
@@ -263,8 +256,8 @@
     </div>
     <script type="text/javascript" src="scripts/bundle.js"></script>
     {{{foot}}}
-    <script data-goatcounter="https://ishanpranav.goatcounter.com/count"
-            async src="//gc.zgo.at/count.js"></script>
+    <script data-goatcounter="https://ishanpranav.goatcounter.com/count" async
+            src="//gc.zgo.at/count.js"></script>
 </body>
 
 </html>
