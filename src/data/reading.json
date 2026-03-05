@@ -107,24 +107,9 @@
         "rating": 1
     },
     {
-        "title": "Jabberwocky",
-        "author": "Lewis Caroll",
-        "rating": 2
-    },
-    {
         "title": "In Catilinam",
         "author": "Cicero",
         "rating": 2
-    },
-    {
-        "title": "Alcatraz Versus the Evil Librarians",
-        "author": "Brandon Sanderson",
-        "rating": 1
-    },
-    {
-        "title": "One Up on Wall Street",
-        "author": "Peter Lynch",
-        "rating": 1
     },
     {
         "title": "The Little Book of Common Sense Investing",
@@ -133,20 +118,10 @@
         "index": "Little Book of Common Sense Investing"
     },
     {
-        "title": "Lily B. on the Brink of Cool",
-        "author": "Elizabeth Cody Kimmel",
-        "rating": 1
-    },
-    {
         "title": "The Phantom Tollbooth",
         "author": "Norton Juster",
         "rating": 1,
         "index": "Phantom Tollbooth"
-    },
-    {
-        "title": "The Westing Game",
-        "author": "Ellen Raskin",
-        "rating": 1
     },
     {
         "title": "The Name of this Book is Secret",
@@ -158,18 +133,6 @@
         "title": "Story of Your Life",
         "author": "Ted Chiang",
         "rating": 2
-    },
-    {
-        "title": "The Necklace",
-        "author": "Guy de Maupassant",
-        "rating": 1,
-        "index": "Necklace"
-    },
-    {
-        "title": "The Lottery",
-        "author": "Shirley Jackson",
-        "rating": 1,
-        "index": "Lottery"
     },
     {
         "title": "The Richest Man in Babylon",

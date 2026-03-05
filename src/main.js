@@ -4,9 +4,9 @@
 import { build } from 'esbuild';
 import { readdirSync, readFileSync, writeFileSync } from 'fs';
 import Handlebars from 'handlebars';
-import { basename, dirname, join } from 'path';
+import { basename, dirname, extname, join } from 'path';
 import { fileURLToPath } from 'url';
-import reading from './data/reading.json' with { type: 'json' }; 
+import reading from './data/reading.json' with { type: 'json' };
 
 const fileName = fileURLToPath(import.meta.url);
 const rootDirectory = dirname(fileName);
@@ -28,21 +28,23 @@ function eqHelper(a, b) {
 }
 
 function getPartial(key, data) {
-  const partial = Handlebars.partials[`${data.pageName}-${key}`];
+  const partialName = `${data.pageName}-${key}`;
+  let partial = Handlebars.partials[partialName];
 
   if (!partial) {
     return "";
   }
 
-  if (typeof partial === 'function') {
-    return partial(data);
-  } 
-  
-  return partial;
+  if (typeof partial === 'string') {
+    partial = Handlebars.compile(partial);
+    Handlebars.partials[partialName] = partial
+  }
+
+  return partial(data);
 }
 
 for (const file of readdirSync(partialsDirectory)) {
-  const name = basename(file, '.html');
+  const name = basename(file, extname(file));
   const content = readFileSync(
     join(partialsDirectory, file),
     'utf8'
@@ -87,7 +89,7 @@ reading.sort((left, right) => {
   if (!left.index) {
     left.index = left.title;
   }
-  
+
   if (!right.index) {
     right.index = right.title;
   }
@@ -95,24 +97,27 @@ reading.sort((left, right) => {
   return left.index.localeCompare(right.index);
 });
 
+const baseData = {
+  description: "Irvine, California, United States. Independent Consultant. Research Assistant, NYU Stern School of Business. Incoming Investment Banking Analyst @ PNC Capital Markets. Education: New York University.",
+  image: 'https://ishanpranav.github.io/website/images/profile-full-cut.jpg',
+  titles: titles,
+  url: 'https://ishanpranav.github.io/website',
+  siteName: 'ishanpranav.github.io',
+  legalName: 'Ishan Pranav',
+  email: 'ishan.pranav@stern.nyu.edu',
+  themeColor: '#32174d',
+  reading: reading,
+  gitHubUrl: 'https://github.com/ishanpranav',
+  linkedInUrl: 'https://www.linkedin.com/in/ishanpranav/',
+  instagramUrl: 'https://www.instagram.com/ishan.pranav/'
+};
+
 for (const file of readdirSync(pagesDirectory)) {
-  const pageName = basename(file, '.hbs');
-  const data = {
-    description: "Irvine, California, United States. Independent Consultant. Research Assistant, NYU Stern School of Business. Incoming Investment Banking Analyst @ PNC Capital Markets. Education: New York University.",
-    image: 'https://ishanpranav.github.io/website/images/profile-full-cut.jpg',
-    title: titles[pageName],
-    titles: titles,
-    pageName: pageName,
-    url: 'https://ishanpranav.github.io/website',
-    siteName: 'ishanpranav.github.io',
-    legalName: 'Ishan Pranav',
-    email: 'ishan.pranav@stern.nyu.edu',
-    themeColor: '#32174d',
-    reading: reading,
-    gitHubUrl: 'https://github.com/ishanpranav',
-    linkedInUrl: 'https://www.linkedin.com/in/ishanpranav/',
-    instagramUrl: 'https://www.instagram.com/ishan.pranav/'
-  };
+  const pageName = basename(file, extname(file));
+  const data = { ...baseData };
+
+  data.title = titles[pageName];
+  data.pageName = pageName;
   const pageSource = readFileSync(
     join(pagesDirectory, file),
     'utf8'
